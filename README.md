@@ -1,31 +1,72 @@
-# Description
+---
+title: "Functional BART with Shape Priors: A Bayesian Tree Approach to Constrained Functional Regression"
+author: ""
+date: ""
+mainfont: "Latin Modern Roman"
+fontsize: 11pt
+geometry: margin=1in
 ---
 
-We provide some codes for the work:
+# Description
 
-<center>  <font size="+0.5" color="blue"><b>Functional Bayesian Additive Regression Trees with Shape Constraints</b></font> </center>
+This repository contains code and materials for the work:
 
-In general, our files can be divided into **two parts**:   
-* An <font color="red"><b>R package</b></font> `FBART` package written in `C++` and `R`.
-* Using this package, <font color="blue">an RMarkdown file</font> is provided to demonstrate the proposed FBART and S-FBART.
+\begin{center}
+{\Large \textbf{Functional BART with Shape Priors: A Bayesian Tree Approach to Constrained Functional Regression}}
+\end{center}
 
-## The R Package `FBART`
- 
-We provide an <font color="red"><b>R package</b></font> in file `FBART_1.0.tar.gz`, for the estimation framework proposed in the paper. This package is mainly written in `C++`, with the help of `RcppArmadillo`.
+The repository consists of **two main components**:
 
-To <font color="red">install</font> this package, make sure the R packages `Rcpp` and `TruncatedNormal` are available. Also, for macOS, you need a FORTRAN compiler to compile R packages from sources (<a href="https://mac.r-project.org/tools/">see this guidance</a>). 
+- An **R package** `FBART` written in C++ and R.  
+- An **RMarkdown file** demonstrating the proposed FBART and S-FBART models.
 
-This package will be installed in the first code chunk in `illustrating_example.Rmd`. You can also install it in command line: 
-```
+---
+
+# The R Package `FBART`
+
+The file `FBART_1.0.tar.gz` contains the R package implementing the estimation framework developed in the paper.  
+The package is primarily written in **C++**, using `RcppArmadilla` for efficient computation.
+
+## Installation
+
+Before installation, ensure the following R packages are available:
+
+- **Rcpp**
+- **TruncatedNormal**
+
+For **macOS**, a working **FORTRAN compiler** is required when installing packages from source  
+(see: https://mac.r-project.org/tools/).
+
+To install the package from the command line:
+
+```bash
 R CMD INSTALL FBART_1.0.tar.gz
 ```
- 
 
-## R Files for Illustration
- 
-The <font color="blue">RMarkdown file</font>, `illustrating_example.Rmd`,  gives an illustrating example to demonstrate the use of our methods. 
-* In this Rmd file, running the model fitting chunk can take a few minutes.
-* The running results are stored in folder `./Data`, and the generated figures are stored in folder `./Figures`. 
-* The generated PDF file `illustrating_example.pdf` is provided.
+The package is also installed automatically in the first code chunk of `illustrating_example.Rmd`.
 
-The R file, `functions.R`, provides an `R` function that summarizes the posterior curves.
+---
+
+# R Files for Illustration
+
+The file **`illustrating_example.Rmd`** provides a complete example demonstrating how to use the FBART and S-FBART models.
+
+- Running the model-fitting section may take several minutes.  
+- Output objects are saved in the directory `./Data`.  
+- Generated figures are saved in the directory `./Figures`.  
+- A compiled PDF version, **`illustrating_example.pdf`**, is included for convenience.
+
+The file **`functions.R`** contains helper functions for summarizing posterior functional estimates.
+
+---
+
+## Data
+
+The folder **`BatteryData`** contains the processed battery dataset derived from  "Severson, Kristen A., et al. "Data-driven prediction of battery cycle life before capacity degradation." Nature Energy 4.5 (2019): 383-391." The authors provide the raw data at: <https://data.matr.io/1/>
+
+Within this folder, we include the following processed files:
+
+- **`BatterySummary.mat`** — Summary information for 124 commercial lithium iron phosphate/graphite cells cycled under fast-charging conditions.
+- **`BatteryFeatures.mat`** — A processed feature matrix containing 19 features for each of the 124 batteries.
+
+---
