@@ -1,19 +1,17 @@
----
+<!---
 title: "Functional BART with Shape Priors: A Bayesian Tree Approach to Constrained Functional Regression"
 author: ""
 date: ""
 mainfont: "Latin Modern Roman"
 fontsize: 11pt
 geometry: margin=1in
----
+-->
+
+# Functional BART with Shape Priors: A Bayesian Tree Approach to Constrained Functional Regression
 
 # Description
 
-This repository contains code and materials for the work:
-
-\begin{center}
-{\Large \textbf{Functional BART with Shape Priors: A Bayesian Tree Approach to Constrained Functional Regression}}
-\end{center}
+This repository contains code and materials for the work: "Functional BART with Shape Priors: A Bayesian Tree Approach to Constrained Functional Regression".
 
 The repository consists of **two main components**:
 
